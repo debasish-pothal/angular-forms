@@ -9,5 +9,14 @@ import { Employee } from './model/employee.model';
 export class AppComponent {
   title = 'Angular 4 Forms';
   languages = ['English', 'Hindi', 'Chinese'];
-  employee = new Employee('Debasish', 'Pothal', true, 'W2', 'English');
+  employee = new Employee('Debasish', 'Pothal', true, 'W2', 'default');
+  invalidPrimaryLanguage = false;
+
+  validatePrimaryLanguage(event) {
+    if (event === 'default') {
+      this.invalidPrimaryLanguage = true;
+    }else {
+      this.invalidPrimaryLanguage = false;
+    }
+  }
 }
