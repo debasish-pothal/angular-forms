@@ -3,26 +3,27 @@
   <form #form="ngForm" novalidate>
     <div class="form-group">
       <label>First Name:</label>
-      <input type="text" class="form-control" name="fname" required ngModel />
+      <input type="text" class="form-control" name="firstName" required [(ngModel)]="employee.firstName" />
     </div>
     <div class="form-group">
       <label>Last Name:</label>
-      <input type="text" class="form-control" name="lname" required ngModel />
+      <input type="text" class="form-control" name="lastName" required [(ngModel)]="employee.lastName" />
     </div>
     <div class="checkbox">
-      <label><input type="checkbox" name="fulltime" ngModel> Fulltime Employee</label>
+      <label><input type="checkbox" name="fulltime" [(ngModel)]="employee.isFullTime"> Fulltime Employee</label>
     </div>
     <label>Payment Type:</label>
     <div class="radio">
-      <label class="radio-inline"><input type="radio" name="paytype" checked ngModel>W2</label>
-      <label class="radio-inline"><input type="radio" name="paytype" ngModel>1099</label>
+      <label class="radio-inline"><input type="radio" name="paymentType" value="W2" [(ngModel)]="employee.paymentType">W2</label>
+      <label class="radio-inline"><input type="radio" name="paymentType" value="1099" [(ngModel)]="employee.paymentType">1099</label>
     </div>
     <div class="form-group">
       <label>Primary Language:</label>
-      <select class="form-control" name="language" ngModel>
+      <select class="form-control" name="language" [(ngModel)]="employee.primaryLanguage">
         <option *ngFor="let language of languages">{{language}}</option>
       </select>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+  {{employee | json }}
 </div>
