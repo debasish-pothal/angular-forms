@@ -30,7 +30,6 @@
           <p>Select a Primary Language !!</p>
         </div>
     </div>
-    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Submit</button>
+    <button [disabled]="form.invalid" type="button" class="btn btn-primary" (click)="submitForm(form)">Submit</button>
   </form>
-  {{employee | json }}
 </div>
